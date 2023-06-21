@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
     <title>OdinLibrary</title>
 </head>
 <body>
@@ -20,6 +21,19 @@
                 <p>Add Book</p>
             </button>
         </section>
+        <div class="popUp">
+            <form class="bookForm">
+                <h3>Add New Book</h3>
+                <input type="text" id="title" placeholder="Title" required maxlength="100">
+                <input type="text" id="author" placeholder="Author" required maxlength="100">
+                <input type="number" id="pages" placeholder="Pages" required max="10000">
+                <div class="readCheckbox">
+                    <label for="isRead" class="switch">Read</label>
+                    <input type="checkbox" id="isRead">
+                </div>
+                <button type="submit" class="submitBtn">Submit</button>
+            </form>
+        </div>
     </main>
     <footer>
         <p>
