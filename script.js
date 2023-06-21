@@ -27,7 +27,13 @@ function addBook(e) {
     addBookToLibrary();
 }
 
+function resetBooks() {
+    bookArea.innerHTML = '';
+    bookArea.appendChild(addBookBtn);
+}
+
 function addBookToLibrary() {
+    resetBooks();
     for (let book of myLibrary) {
         const bookCard = document.createElement('div');
         const title = document.createElement('p');
