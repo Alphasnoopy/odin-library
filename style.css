@@ -41,7 +41,7 @@ main {
     font-size: 25px;
     font-weight: 600;
     color: black;
-    height: 350px;
+    height: 375px;
 }
 
 .addBook:hover {
@@ -52,8 +52,8 @@ main {
 
 .bookArea {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
 }
 
 .popUp {
@@ -67,6 +67,40 @@ main {
 
 .active {
     transform: translate(-50%, -50%) scale(1);
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.774);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    overflow-wrap: break-word;
+}
+
+.card>p {
+    font-weight: 600;
+}
+
+.authorCard {
+    font-style: italic;
+}
+
+.card button {
+    padding: 15px 0;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.774);
+    background-color: rgba(243, 70, 70, 0.795);
+    border: none;
+}
+
+.card button:hover {
+    cursor: pointer;
 }
 
 footer {
