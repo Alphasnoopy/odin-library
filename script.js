@@ -41,9 +41,12 @@ function addBookToLibrary() {
         const pages = document.createElement('p');
         const readBtn = document.createElement('button');
 
-        title.textContent = book.title;
-        author.textContent = book.author;
-        pages.textContent = book.pages;
+        bookCard.classList.add('card');
+        author.classList.add('authorCard');
+
+        title.textContent = `"${book.title}"`;
+        author.textContent = `- ${book.author}`;
+        pages.textContent = `${book.pages} Pages`;
         readBtn.textContent = 'Read';
 
         bookCard.append(title, author, pages, readBtn);
