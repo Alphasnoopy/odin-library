@@ -33,7 +33,9 @@ function resetBooks() {
 }
 
 function addBookToLibrary() {
+    bookForm.reset();
     resetBooks();
+    
     for (let book of myLibrary) {
         const bookCard = document.createElement('div');
         const title = document.createElement('p');
