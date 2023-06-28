@@ -63,10 +63,48 @@ main {
     left: 50%;
     width: 300px;
     transform: translate(-50%, -50%) scale(0);
+    background-color: rgb(134, 133, 133);
+    padding: 25px 10px;
+    border-radius: 15px;
 }
 
 .active {
     transform: translate(-50%, -50%) scale(1);
+}
+
+.bookForm>h3 {
+    margin-bottom: 15px;
+}
+
+#title,
+#author,
+#pages {
+   line-height: 25px;
+   width: 250px;
+   margin-bottom: 15px;
+   border: 2px solid black;
+   border-radius: 5px;
+   padding: 5px;
+   font-size: 20px;
+}
+
+#isRead {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.submitBtn {
+    padding: 8px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+}
+
+.submitBtn:hover {
+    cursor: pointer;
+    background-color: white;
 }
 
 .card {
