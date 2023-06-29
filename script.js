@@ -63,3 +63,4 @@ function addBookToLibrary() {
 
 addBookBtn.addEventListener("click", popUpForm);
 bookForm.addEventListener("submit", addBook);
+overlay.addEventListener("click", resetForm);
