@@ -3,11 +3,11 @@ const addBookBtn = document.querySelector('.addBook');
 const popUp = document.querySelector('.popUp');
 const bookForm = document.querySelector('.bookForm');
 const bookArea = document.querySelector('.bookArea');
-const overlay = document.querySelector('overlay');
+const overlay = document.getElementById('overlay');
 
 function popUpForm() {
-    console.log('click');
     popUp.classList.add('active');
+    overlay.style.display = "block";
 }
 
 class Book {
@@ -22,6 +22,7 @@ class Book {
 function resetForm() {
     popUp.classList.remove('active');
     bookForm.reset();
+    overlay.style.display = "none";
 }
 
 function addBook(e) {
@@ -62,4 +63,3 @@ function addBookToLibrary() {
 
 addBookBtn.addEventListener("click", popUpForm);
 bookForm.addEventListener("submit", addBook);
-overlay.addEventListener("click", resetForm);
