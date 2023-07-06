@@ -34,6 +34,14 @@ main {
     padding: 0 200px 0 200px;
 }
 
+.bookArea {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 35px;
+    overflow: auto;
+}
+
 .addBook {
     border: 2px solid black;
     background-color: inherit;
@@ -41,19 +49,12 @@ main {
     font-size: 25px;
     font-weight: 600;
     color: black;
-    height: 375px;
 }
 
 .addBook:hover {
     border-color: white;
     color: white;
     cursor: pointer;
-}
-
-.bookArea {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 35px;
 }
 
 .popUp {
@@ -123,7 +124,7 @@ main {
     font-weight: 600;
 }
 
-.authorCard {
+.cardAuthor {
     font-style: italic;
 }
 
@@ -133,12 +134,16 @@ main {
     font-size: 20px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.774);
-    background-color: rgba(243, 70, 70, 0.795);
+    background-color: rgba(70, 243, 93, 0.795);
     border: none;
 }
 
 .card button:hover {
     cursor: pointer;
+}
+
+.card .readFalse {
+    background-color: rgba(243, 70, 70, 0.795);
 }
 
 footer {
@@ -152,7 +157,7 @@ p {
     text-align: center;
 }
 
-#overlay {
+.overlay {
     position: fixed;
     top: 0px;
     left: 0px;
