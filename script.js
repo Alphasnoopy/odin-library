@@ -3,7 +3,7 @@ const addBookBtn = document.querySelector('.addBook');
 const popUp = document.querySelector('.popUp');
 const bookForm = document.querySelector('.bookForm');
 const bookArea = document.querySelector('.bookArea');
-const overlay = document.getElementById('overlay');
+const overlay = document.querySelector('.overlay');
 
 function popUpForm() {
     popUp.classList.add('active');
@@ -38,6 +38,22 @@ function resetBooks() {
     bookArea.appendChild(addBookBtn);
 }
 
+function readColor(readBtn, ifRead) {
+    (ifRead)? readBtn.classList.remove('readFalse') : readBtn.classList.add('readFalse');
+}
+
+function toggleRead(card) {
+    const toggleTitle = card.querySelector('.cardTitle').textContent.slice(1, -1);
+    const toggleAuthor = card.querySelector('.cardAuthor').textContent.substring(2);
+    for (let book of myLibrary) {
+        if (book.title === toggleTitle && book.author === toggleAuthor) {
+            (book.isRead)? book.isRead = false : book.isRead = true;
+        }
+    }
+
+    addBookToLibrary();
+}
+
 function addBookToLibrary() {
     resetBooks();
 
@@ -49,15 +65,22 @@ function addBookToLibrary() {
         const readBtn = document.createElement('button');
 
         bookCard.classList.add('card');
-        author.classList.add('authorCard');
+        title.classList.add('cardTitle');
+        author.classList.add('cardAuthor');
+        readBtn.classList.add('cardReadBtn');
 
         title.textContent = `"${book.title}"`;
         author.textContent = `- ${book.author}`;
         pages.textContent = `${book.pages} Pages`;
         readBtn.textContent = 'Read';
 
+        readColor(readBtn, book.isRead);
+
         bookCard.append(title, author, pages, readBtn);
         bookArea.append(bookCard);
+        readBtn.addEventListener("click", function() {
+            toggleRead(readBtn.parentElement);
+        });
     }
 }
 
