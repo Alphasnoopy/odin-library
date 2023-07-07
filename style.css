@@ -110,25 +110,40 @@ main {
 
 .card {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 10px 20px 30px 20px;
     background-color: rgba(255, 255, 255, 0.774);
     border: 2px solid black;
     border-radius: 10px;
     font-size: 20px;
+    font-weight: 600;
     overflow-wrap: break-word;
 }
 
-.card>p {
-    font-weight: 600;
+.cardRemove {
+    align-self: flex-end;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    padding-bottom: 10px;
+}
+
+.cardRemove:hover {
+    color: red;
+}
+
+.cardInfo {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .cardAuthor {
     font-style: italic;
 }
 
-.card button {
+.cardReadBtn {
     padding: 15px 0;
     border-radius: 8px;
     font-size: 20px;
