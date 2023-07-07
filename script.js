@@ -2,6 +2,7 @@ let myLibrary = [];
 const addBookBtn = document.querySelector('.addBook');
 const popUp = document.querySelector('.popUp');
 const bookForm = document.querySelector('.bookForm');
+const errorForm = document.querySelector('.error');
 const bookArea = document.querySelector('.bookArea');
 const overlay = document.querySelector('.overlay');
 
@@ -19,6 +20,14 @@ class Book {
     }
 }
 
+function bookExists(title, author) {
+    for (let book of myLibrary) {
+        if (book.title === title && book.author === author) {
+            return book;
+        }
+    }
+}
+
 function resetForm() {
     popUp.classList.remove('active');
     bookForm.reset();
@@ -28,9 +37,15 @@ function resetForm() {
 function addBook(e) {
     e.preventDefault();
     const newBook = new Book();
-    myLibrary.push(newBook);
-    resetForm();
-    addBookToLibrary();
+    if (!bookExists(newBook.title, newBook.author)) {
+        errorForm.classList.remove('errorTrue');
+        myLibrary.push(newBook);
+        resetForm();
+        addBookToLibrary();
+    }
+    else {
+        errorForm.classList.add('errorTrue');
+    }  
 }
 
 function resetBooks() {
@@ -46,11 +61,7 @@ function findBook(card) {
     const title = card.querySelector('.cardTitle').textContent.slice(1, -1);
     const author = card.querySelector('.cardAuthor').textContent.substring(2);
 
-    for (let book of myLibrary) {
-        if (book.title === title && book.author === author) {
-            return book;
-        }
-    }
+    return bookExists(title, author);
 }
 
 function toggleRead(card) {
@@ -102,7 +113,7 @@ function addBookToLibrary() {
         bookArea.append(bookCard);
 
         remove.addEventListener("click", function() {
-            removeCard(remove.parentElement)
+            removeCard(remove.parentElement);
         })
 
         readBtn.addEventListener("click", function() {
