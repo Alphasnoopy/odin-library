@@ -89,6 +89,21 @@ main {
    font-size: 20px;
 }
 
+#pages {
+    margin-bottom: 2px;
+}
+
+.error {
+    visibility: hidden;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(197, 81, 81);
+}
+
+.errorTrue {
+    visibility: visible;
+}
+
 #isRead {
     width: 20px;
     height: 20px;
